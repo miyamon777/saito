@@ -130,7 +130,6 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 .sliderlist__item {
     flex-shrink: 0;
@@ -146,7 +145,6 @@ body {
 .sliderlist__item3 {
     background-color: brown;
 }
-
 .slide-btn {
     margin: auto;
     content: "";
