@@ -1,4 +1,5 @@
 'use strict'
+
 //ボタン
 const clickCountryMenu = document.getElementsByClassName('click-country-menu')[0];
 const clickCountryMenuBtn = document.getElementsByClassName('click-country-menu-btn')[0];

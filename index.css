@@ -9,7 +9,6 @@ body {
     color: #000;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 15px;
 }
 .arrow::after {
     position: absolute;
@@ -21,8 +20,8 @@ body {
     vertical-align: middle;
     width: 5px;
     height: 5px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 2px solid rgb(100, 100, 100);
+    border-right: 2px solid rgb(100, 100, 100);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     transition: all .2s ease;
@@ -35,7 +34,6 @@ body {
     color: #000;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 15px;
 }
 .is-active::after {
     position: absolute;
@@ -47,8 +45,8 @@ body {
     vertical-align: middle;
     width: 5px;
     height: 5px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 2px solid rgb(100, 100, 100);
+    border-right: 2px solid rgb(100, 100, 100);
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
     transition: all .2s ease;
@@ -57,30 +55,39 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(250, 250, 250);
+    height: 50px;
+    padding: 0 10px;
 }
 .header div {
-    background-color: red;
+    background-color: rgb(250, 250, 250);
     display: flex;
 }
 .header-left {
     display: flex;
 }
-.header-right a {
+.header-left p {
+    margin: auto;
+    font-size: 12px;
+}
+.header a {
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: black;
     padding: 0 10px;
+    font-size: 12px;
+    color: rgb(130, 130, 130);
 }
 .header p {
     padding: 0 10px;
+    color: rgb(130, 130, 130);
 }
 .header-left-left {
-    border-right:1px solid black;
+    border-right:1px solid rgb(220, 220, 220);
 }
 .header-right-border {
-    border-right:1px solid black;
+    border-right:1px solid rgb(220, 220, 220);
 }
 .click-country-menu {
     width: 150px;
@@ -106,16 +113,38 @@ body {
 }
 
 .navigation {
-    background-color: aqua;
+    background-color: rgb(250, 250, 250);
     display: flex;
     justify-content: space-between;
+    height: 50px;
+    padding: 0 30px;
 }
 .navigation div {
     display: flex;
-    font-size: 13px;
 }
 .navigation p {
-    padding: 0 5px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 0;
+}
+.SELL {
+    font-size: 20px;
+}
+.SELL span {
+    color: aquamarine;
+}
+.HOME {
+    font-size: 10px;
+    color: rgb(100, 100, 100);
+}
+.HOME p {
+    padding: 0 3vw;
+}
+.logo {
+    font-size: 10px;
+}
+.logo-padding {
+    padding-right: 10px;
 }
 
 .slide {
