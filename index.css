@@ -1,0 +1,235 @@
+body {
+    margin: 0 auto;
+}
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+}
+.arrow::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3px;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+    width: 5px;
+    height: 5px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .2s ease;
+}
+
+.is-active {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+}
+.is-active::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3px;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+    width: 5px;
+    height: 5px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    transition: all .2s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.header div {
+    background-color: red;
+    display: flex;
+}
+.header-left {
+    display: flex;
+}
+.header-right a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    padding: 0 10px;
+}
+.header p {
+    padding: 0 10px;
+}
+.header-left-left {
+    border-right:1px solid black;
+}
+.header-right-border {
+    border-right:1px solid black;
+}
+.click-country-menu {
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 64px;
+    right: 63px;
+    z-index: 10;
+}
+.click-country-menu a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: rgb(97, 97, 97);
+    background: white;
+    font-size: 13px;
+    height:40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.click-country-menu a:hover {
+    background-color: azure;
+}
+
+.navigation {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation div {
+    display: flex;
+    font-size: 13px;
+}
+.navigation p {
+    padding: 0 5px;
+}
+
+.slide {
+    width: auto;
+    height: 45vw;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.sliderlist {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.sliderlist__item {
+    flex-shrink: 0;
+    width: 2000px;
+    height: auto;
+}
+.sliderlist__item1 {
+    background-color: aquamarine;
+}
+.sliderlist__item2 {
+    background-color: blue;
+}
+.sliderlist__item3 {
+    background-color: brown;
+}
+
+.slide-btn {
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .2s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.slide-btn-left {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    left: 20px;
+}
+.slide-btn-right {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    right: 20px;
+}
+
+.topic {
+    background-color: blueviolet;
+    width: 65%;
+}
+.topic p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.sub-main {
+    background-color: bisque;
+}
+
+.service {
+    background-color: blue;
+    text-align: center;
+    width: 45%;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.main-slide {
+    background-color: aquamarine;
+}
+.main-slide-title {
+    text-align: center;
+}
+
+.footer {
+    background-color: rgb(206, 47, 171);
+    display: flex;
+    font-size: 13px;
+    justify-content: space-evenly;
+}
+.footer-center {
+    padding: 0 5%;
+    border-right:1px solid black;
+    border-left:1px solid black;
+}
+.footer p {
+    margin: 0 auto;
+}
+
+.main-footer {
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.main-footer-container {
+    width: 30%;
+}
+.main-footer-container-center {
+    width: 20%;
+}
+
+.sub-footer {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
