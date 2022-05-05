@@ -124,27 +124,34 @@ body {
 }
 .navigation p {
     font-weight: bold;
-    margin: auto;
-    margin-bottom: 0;
 }
 .SELL {
     font-size: 20px;
+}
+.SELL p {
+    margin-bottom: 0;
 }
 .SELL span {
     color: aquamarine;
 }
 .HOME {
-    font-size: 10px;
+    font-size: 12px;
     color: rgb(100, 100, 100);
 }
 .HOME p {
     padding: 0 3vw;
+    margin: auto;
+    margin-bottom: 5px;
 }
 .logo {
-    font-size: 10px;
+    font-size: 12px;
+}
+.logo p {
+    margin: auto;
+    margin-bottom: 5px;
 }
 .logo-padding {
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .slide {
@@ -210,7 +217,7 @@ body {
 }
 .topic h5 {
     margin: 0;
-    color: rgb(130, 130, 130)
+    color: rgb(130, 130, 130);
 }
 .topic h2 {
     margin: 0;
@@ -269,6 +276,11 @@ p.Free {
     line-height: 30px;
     text-align: center;
 }
+.service a:hover {
+    background-color: white;
+    color: black;
+    transition: all .2s ;
+}
 
 .main-slide {
     background-color: aquamarine;
@@ -278,36 +290,133 @@ p.Free {
 }
 
 .footer {
-    background-color: rgb(206, 47, 171);
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    height: 250px;
     display: flex;
     font-size: 13px;
     justify-content: space-evenly;
 }
-.footer-center {
-    padding: 0 5%;
+.footer div {
+    margin: auto 0;
+}
+.footer-left {
+    padding-left: 60px;
+}
+.footer-right {
+    padding-right: 60px;
+}
+.solid {
+    height: 30px;
     border-right:1px solid black;
-    border-left:1px solid black;
+}
+.footer h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
 }
 .footer p {
-    margin: 0 auto;
+    margin: 0;
+    font-size: 11px;
+    color: rgb(200, 200, 200);
 }
 
 .main-footer {
-    background-color: blanchedalmond;
-    display: flex;
-    justify-content: space-between;
+    background-color: rgb(220, 220, 220);
+    height: 350px;
     font-size: 13px;
 }
-.main-footer-container {
-    width: 30%;
+.main-footer-box {
+    margin: auto 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.main-footer-box h3,.main-footer-box h4 {
+    letter-spacing: 1px;
+}
+.main-footer-box p {
+    color: rgb(150, 150, 150);
+}
+.main-footer-container-left {
+    width: 35%;
+    margin: 80px 0;
 }
 .main-footer-container-center {
-    width: 20%;
+    width: 15%;
+    margin: 70px 0;
+}
+.main-footer-box a {
+    display: block;
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+}
+.main-footer-box a:hover {
+    text-decoration-line: underline ;
+}
+.main-footer-container-right {
+    width: 35%;
+    margin: 70px 0;
+}
+.main-footer-form {
+    display: flex;
+}
+.main-footer-form input {
+    background-color: rgb(220, 220, 220);
+    border-radius: 0;
+    border: 1px solid rgb(150, 150, 150);
+    border-right: none;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    padding-left: 10px;
+    color: black;
+}
+.main-footer-form input::placeholder {
+    color: rgb(150, 150, 150);
+}
+.main-footer-form input:focus {
+    outline: none;
+}
+.main-footer-form button {
+    background-color: rgb(220, 220, 220);
+    border-radius: 0;
+    border: 1px solid rgb(150, 150, 150);
+    border-left: none;
+    height: 40px;
+    width: 50px;
+    box-sizing: border-box;
+    padding: 0;
+    cursor: pointer;
+}
+.main-footer-form button:hover {
+    background-color: rgb(100, 100, 100);
+    transition: all .2s;
+}
+.fa-paper-plane::before {
 }
 
 .sub-footer {
-    background-color: aqua;
+    background-color: rgb(60, 60, 60);
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
+    height: 80px;
+}
+.sub-footer p {
+    margin: auto auto auto 60px;
+    font-size: 12px;
+    color: rgb(220, 220, 220);
+}
+.sub-footer div {
+    margin: auto 60px auto auto;
+    height: auto;
+    display: flex;
+}
+.sub-footer img {
+    width: 40px;
+    height: 20px;
+    display: block;
+}
+.sub-footer-img-padding {
+    padding-right: 5px;
 }
