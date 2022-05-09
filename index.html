@@ -33,19 +33,32 @@
         </div>
     </div>
 
-    
+    <button id="scroll-to-top-btn">⬆︎</button>
+
+    <button id="select-btn">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+    <div id="select-btn-content">
+        <select name="" id="select">
+            <option value=""hidden>select colour variant</option>
+            <option value="1">blue</option>
+            <option value="2">pink</option>
+            <option value="3">red</option>
+            <option value="4">green</option>
+        </select>
+    </div>
 
     <div class="navigation">
         <div class="SELL">
             <p>S E L L <span>.</span></p>
         </div>
         <div class="HOME">
-            <p>HOME</p>
-            <p>SHOP</p>
-            <p>TEMPLATE</p>
-            <p>DROPDOWN</p>
-            <p>CONTACT</p>
-            <P>DOCS</P>
+            <a class="arrow home-first" href="#">HOME</a>
+            <a class="arrow home" href="#">SHOP</a>
+            <a class="arrow home template-btn" href="#">TEMPLATE</a>
+            <a class="arrow home" href="#">DROPDOWN</a>
+            <a class="no-arrow" href="#">CONTACT</a>
+            <a class="arrow home home-last" href="#">DOCS</a>
         </div>
         <div class="logo">
             <p class="logo-padding">ロゴ</p>
@@ -338,7 +351,8 @@
             <img src="image2.png" alt="">
         </div>
     </div>
-    <div class="template-content">
+    <div class="template-content" style="display:none;">
+
     </div>
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/d7ba12b96a.js" crossorigin="anonymous"></script>

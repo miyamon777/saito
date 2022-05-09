@@ -1,22 +1,22 @@
 'use strict'
 
-//ボタン
+//アローボタン
 const clickCountryMenu = document.getElementsByClassName('click-menu-country')[0];
 const clickMoneyMenu = document.getElementsByClassName('click-menu-money')[0];
-
 document.addEventListener('click', (e) => {
     const clickCountryMenuStyle = clickCountryMenu.getAttribute("style");
+    const headerCountryBtn = document.querySelector('.header-country-btn');
+
     if(clickCountryMenuStyle === 'display:none;') {
         if(!e.target.closest('.header-country-btn')) {
-            clickCountryMenu.setAttribute('style', 'display:none;');
         } else {
             clickCountryMenu.setAttribute('style', '');
-            document.querySelector('.header-country-btn').classList.add('is-active');
+            headerCountryBtn.classList.add('is-active');
         }
     } else {
         if(!e.target.closest('.click-country-menu-btn')) {
             clickCountryMenu.setAttribute('style', 'display:none;');
-            document.querySelector('.header-country-btn').classList.remove('is-active');
+            headerCountryBtn.classList.remove('is-active');
         } else {
         }
     }
@@ -24,30 +24,53 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('click', (e) => {
     const clickMoneyMenuStyle = clickMoneyMenu.getAttribute("style");
+    const headerMoneyBtn = document.querySelector('.header-money-btn');
     if(clickMoneyMenuStyle === 'display:none;') {
         if(!e.target.closest('.header-money-btn')) {
             clickMoneyMenu.setAttribute('style', 'display:none;');
         } else {
             clickMoneyMenu.setAttribute('style', '');
-            document.querySelector('.header-money-btn').classList.add('is-active');
+            headerMoneyBtn.classList.add('is-active');
         }
     } else {
         if(!e.target.closest('.click-money-menu-btn')) {
             clickMoneyMenu.setAttribute('style', 'display:none;');
-            document.querySelector('.header-money-btn').classList.remove('is-active');
+            headerMoneyBtn.classList.remove('is-active');
         } else {
         }
     }
 });
 
-//アロー
-// document.querySelector('.header-country-btn').addEventListener('click', function(){
-//     document.querySelector('.header-country-btn').classList.toggle('is-active');
-//  });
+//クリックしたら下から上へスライド
+const templateContent = document.getElementsByClassName('template-content')[0];
+const templateBtn = document.getElementsByClassName('template-btn')[0];
 
-// document.querySelector('.header-money-btn').addEventListener('click', function(){
-//     document.querySelector('.header-money-btn').classList.toggle('is-active');
-// });
+
+
+document.addEventListener('click', (e) => {
+    const templateContentStyle = templateContent.getAttribute("style");
+    if(templateContentStyle === 'display:none;') {
+        if(!e.target.closest('.template-btn')) {
+        } else {
+            templateContent.setAttribute('style', '');
+            templateBtn.classList.add('is-active');
+            setTimeout(function() {
+                templateContent.classList.add("template-content-click");
+            },0);
+        }
+    } else {
+        if(!e.target.closest('.template-btn')) {
+            templateContent.setAttribute('style', 'display:none;');
+            templateBtn.classList.remove('is-active');
+            templateContent.classList.remove("template-content-click");
+        } else {
+            templateContent.setAttribute('style', 'display:none;');
+            templateBtn.classList.remove('is-active');
+            templateContent.classList.remove("template-content-click");
+        }
+    }
+});
+
 
 
 //スライド
@@ -90,3 +113,27 @@ slideBtnLeft.addEventListener("click", function() {
     new_element.className = 'sliderlist__item sliderlist__item3';
     sliderListElement.insertBefore(new_element, sliderListItem1_element);
 });
+
+//ボタン
+const scroll_to_top_btn = document.querySelector('#scroll-to-top-btn');
+
+//クリックイベントを追加
+scroll_to_top_btn.addEventListener( 'click' , scroll_to_top );
+
+function scroll_to_top(){
+	window.scroll({top: 0, behavior: 'smooth'});
+};
+
+
+//スクロール時のイベントを追加
+window.addEventListener( 'scroll' , scroll_event );
+
+function scroll_event(){
+	
+	if(window.pageYOffset > 400){
+		scroll_to_top_btn.style.opacity = '1';
+	}else	if(window.pageYOffset < 400){
+		scroll_to_top_btn.style.opacity = '0';
+	}
+	
+};
