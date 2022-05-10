@@ -151,7 +151,7 @@ body {
     transform: translateY(-5px);
     background-color: rgb(240, 240, 240);
 }
-#select-btn {
+.select-btn {
     position: fixed;
     top: 200px;
     right: 0;
@@ -160,34 +160,52 @@ body {
     height: 35px;
     border: none;
     border-radius: 0;
-    background-color: blue;
+    background-color: skyblue;
     cursor: pointer;
 }
-#select-btn-content {
+.select-btn-blue {
+    background-color: skyblue;
+}
+.select-btn-pink {
+    background-color: pink;
+}
+.select-btn-red {
+    background-color: red;
+}
+.select-btn-green {
+    background-color: green;
+}
+.select-btn-content {
     position: fixed;
     top: 235px;
     right: 0;
     z-index: 10;
     width: 250px;
-    height: 250px;
+    height: 0;
+    overflow: hidden;
     border: 1px solid gainsboro;
     background-color: white;
     text-align: center;
+    transition: all .4s;
+}
+.select-btn-content-click {
+    height: 250px;
+    transition: all .4s;
 }
 #select {
     width: 200px;
     height: 40px;
+    margin-top: 50px;
+    padding-left: 10px;
     border: 1px solid black;
     border-radius: 0;
-    outline: none;
-    margin-top: 30px;
-    padding-left: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    outline: none;
 }
 #select::-ms-expand {
     display: none;
 }
-.fa-solid {
+.fa-gear {
     color: white;
     font-size: 20px;
 }
@@ -368,7 +386,7 @@ body {
     float: left;
     width: 30vw;
     height: 45vw;
-    margin: 0 5vw;
+    margin: 0 4vw;
 }
 .big-box {
     position: relative;
@@ -449,7 +467,7 @@ p.Free {
     width: auto;
     height: auto;
     margin: 0 5vw;
-    overflow: auto;
+    overflow: hidden;
 }
 .main-slide-box {
     display: flex;
@@ -506,7 +524,6 @@ p.Free {
     text-align: center;
     transition: all .2s;
 }
-
 .huti:hover .mask-font {
     opacity: 1;
 }
@@ -530,6 +547,17 @@ p.Free {
 .money {
     margin-top: 5px;
     font-size: 14px;
+}
+.pagination {
+    text-align: center;
+}
+.pagination-btn {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    border-radius: 100%;
+    background: #cccccc;
 }
 
 .footer {

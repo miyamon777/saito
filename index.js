@@ -122,7 +122,7 @@ scroll_to_top_btn.addEventListener( 'click' , scroll_to_top );
 
 function scroll_to_top(){
 	window.scroll({top: 0, behavior: 'smooth'});
-};
+}
 
 
 //スクロール時のイベントを追加
@@ -136,4 +136,58 @@ function scroll_event(){
 		scroll_to_top_btn.style.opacity = '0';
 	}
 	
-};
+}
+
+//セレクトボタンイベント
+const selectBtnContent = document.getElementsByClassName('select-btn-content')[0];
+const selectBtn = document.getElementsByClassName('select-btn')[0];
+
+
+selectBtn.addEventListener('click', function() {
+    //クリックによって値が変わるのでここに記載
+    const selectBtnContentStyle = selectBtnContent.getAttribute("style");
+
+    if(selectBtnContentStyle === 'display:none;') {
+        //setAttributeメソッド完了後にtoggle実行
+        selectBtnContent.setAttribute('style','');
+        setTimeout(function(){
+            selectBtnContent.classList.toggle('select-btn-content-click');
+        },0);
+    } else {
+        selectBtnContent.classList.toggle('select-btn-content-click');
+        //toggleメソッド完了後にsetAttribute実行
+        setTimeout(function(){
+            selectBtnContent.setAttribute('style','display:none;');
+        },400);
+    }
+});
+
+//selectの内容によってボタンの色を変更
+const select = document.getElementById('select');
+//イベント
+select.addEventListener('change',selectColorChange);
+//カラーを変更する関数
+function selectColorChange() {
+    if(select.options[1].selected) {
+        selectBtn.classList.add('select-btn-blue');
+        selectBtn.classList.remove('select-btn-pink');
+        selectBtn.classList.remove('select-btn-red');
+        selectBtn.classList.remove('select-btn-green');
+    } else if(select.options[2].selected) {
+        selectBtn.classList.add('select-btn-pink');
+        selectBtn.classList.remove('select-btn-blue');
+        selectBtn.classList.remove('select-btn-red');
+        selectBtn.classList.remove('select-btn-green');
+    } else if(select.options[3].selected) {
+        selectBtn.classList.add('select-btn-red');
+        selectBtn.classList.remove('select-btn-blue');
+        selectBtn.classList.remove('select-btn-pink');
+        selectBtn.classList.remove('select-btn-green');
+    } else if(select.options[4].selected) {
+        selectBtn.classList.add('select-btn-green');
+        selectBtn.classList.remove('select-btn-blue');
+        selectBtn.classList.remove('select-btn-pink');
+        selectBtn.classList.remove('select-btn-red');
+    }
+}
+
