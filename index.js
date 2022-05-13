@@ -191,3 +191,58 @@ function selectColorChange() {
     }
 }
 
+//メインスライダー
+
+//DOMツリー完成後関数実行
+window.addEventListener('DOMContentLoaded', function() {
+});
+
+//イベントを発生させる場所の定義
+const mainSlideBox = document.getElementsByClassName('main-slide-box')[0];
+//クリックした座標取得
+let setMx = 0;
+let diffMx = 0;
+let addMx = 0;
+const mainSlideList = document.getElementsByClassName('main-slide-list')[0];
+const width = mainSlideList.clientWidth;
+
+
+//クリックされた位置-現在値を計算する関数
+const difference = function(e) {
+    e.preventDefault();
+    //現在値を定義
+    let mX = e.pageX;
+    console.log(mX);
+    diffMx = (mX - setMx);
+    mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+};
+
+//クリックすると関数を実行させる
+mainSlideBox.addEventListener('mousedown',function(e) {
+    e.preventDefault();
+    setMx = e.pageX;
+    //マウスを動かすと関数が実行される
+    mainSlideBox.addEventListener("mousemove", difference);
+    mainSlideBox.style.transition = "none";
+});
+
+//クリックを離したら関数を終了させる
+document.addEventListener('mouseup',function(e) {
+    e.preventDefault();
+    addMx += diffMx;
+    mainSlideBox.removeEventListener("mousemove", difference);
+    let sliderMx;
+    if (addMx > (-width / 2) ) {
+        addMx = 0;
+    } else if (addMx > ((-width / 2) + (-width)) && addMx <= (-width / 2)) {
+        addMx = -width;
+    } else if (addMx > ((-width / 2) + (-width * 2)) && addMx <= ((-width / 2)+ (-width))) {
+        addMx = -width * 2;
+    } else if (addMx > ((-width / 2) + (-width * 3)) && addMx <= ((-width / 2)+ (-width * 2))) {
+        addMx = -width * 3;
+    } else {
+        addMx = -width * 3;
+    }
+    mainSlideBox.style.transform = "translateX("+ (addMx) + "px)";
+    mainSlideBox.style.transition = "all 0.3s";
+});
