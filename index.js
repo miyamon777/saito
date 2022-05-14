@@ -203,6 +203,7 @@ const mainSlideBox = document.getElementsByClassName('main-slide-box')[0];
 let setMx = 0;
 let diffMx = 0;
 let addMx = 0;
+
 const mainSlideList = document.getElementsByClassName('main-slide-list')[0];
 const width = mainSlideList.clientWidth;
 
@@ -212,9 +213,52 @@ const difference = function(e) {
     e.preventDefault();
     //現在値を定義
     let mX = e.pageX;
-    console.log(mX);
-    diffMx = (mX - setMx);
-    mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+    //１番左にある時
+    if((addMx) >= 0) {
+        if(diffMx >= 0) {
+            diffMx = (mX - setMx) / 6;
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        } else {
+            diffMx = (mX - setMx);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        }
+    //２番目にある時
+    } else if((addMx) >= -width) {
+        if(diffMx >= width) {
+            diffMx = (mX - setMx)-(((mX - setMx) - width) / 1.3);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        } else if(diffMx < width) {
+            diffMx = (mX - setMx);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        }
+    //３番目にある時
+    } else if((addMx) >= -width * 2) {
+        //左の領域を超えた時
+        if(diffMx >= width * 2) {
+            diffMx = (mX - setMx)-(((mX - setMx) - width * 2) / 1.5);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        //左の領域以外にいる時
+        } else if(diffMx < width * 2 && diffMx > -width) {
+            diffMx = (mX - setMx);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        //右の領域を超えた時
+        } else if(diffMx <= -width) {
+            diffMx = (mX - setMx)-(((mX - setMx) + width) / 1.3);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        }
+    //４番目にある時
+    } else if((addMx) >= -width * 3) {
+        if(diffMx >= width * 3) {
+            diffMx = (mX - setMx)-(((mX - setMx) - width * 3) / 1.7);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        } else if(diffMx < width * 3 && diffMx > 0) {
+            diffMx = (mX - setMx);
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        } else if(diffMx <= 0) {
+            diffMx = (mX - setMx) / 6;
+            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
+        }
+    }
 };
 
 //クリックすると関数を実行させる
@@ -231,7 +275,6 @@ document.addEventListener('mouseup',function(e) {
     e.preventDefault();
     addMx += diffMx;
     mainSlideBox.removeEventListener("mousemove", difference);
-    let sliderMx;
     if (addMx > (-width / 2) ) {
         addMx = 0;
     } else if (addMx > ((-width / 2) + (-width)) && addMx <= (-width / 2)) {
