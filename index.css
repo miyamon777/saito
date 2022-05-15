@@ -269,6 +269,63 @@ body {
     padding-right: 15px;
 }
 
+
+.swiper {
+    width: 100%;
+    height: 45vw;
+}
+.swiper-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:         flex;
+            justify-content: center;
+            align-items: center;
+    background: #ffffff;
+    font-size: 18px;
+    text-align: center;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+.swiper {
+    margin-right: auto;
+    margin-left: auto;
+}
+.swiper-button-prev {
+    left: 50px;
+}
+.swiper-button-next {
+    right: 50px;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: rgb(70, 70, 70);
+}
+.swiper-button-prev:after {
+    bottom: 0;
+    content: "";
+    height: 30px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    transform: rotate(45deg);
+    border-bottom: 3px solid rgb(70, 70, 70);
+    border-left: 3px solid rgb(70, 70, 70);
+}
+/* 
 .slide {
     display: flex;
     position: relative;
@@ -319,7 +376,7 @@ body {
     right: 20px;
     border-top: 2px solid black;
     border-right: 2px solid black;
-}
+} */
 
 .topic {
     position: relative;
@@ -714,4 +771,5 @@ p.Free {
 .template-content-click {
     transform: translateY(-5px);
     transition: all .2s ease-out;
+    z-index: 10;
 }
