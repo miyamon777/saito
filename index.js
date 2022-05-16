@@ -1,8 +1,9 @@
 'use strict'
-const swiper = new Swiper(".mySwiper", {
+const swiper1 = new Swiper(".mySwiper1", {
     slidesPerView: 1,
     loop: true,
-    navigation: {
+    longSwipesRatio: 0,
+        navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",    
     },
@@ -157,6 +158,17 @@ function selectColorChange() {
 }
 
 //メインスライダー
+const swiper2 = new Swiper(".mySwiper2", {
+    slidesPerView: 5,
+    spaceBetween: 25,
+    longSwipesRatio: 0,
+});
+//ページネーション
+const wrapper = document.querySelector('.wrapper');
+const paginationBtn = document.getElementsByClassName('pagination-btn')[0];
+paginationBtn.addEventListener('click',function() {
+    wrapper.style.transform  = "translateX(-100px)";
+})
 
 //DOMツリー完成後関数実行
 window.addEventListener('DOMContentLoaded', function() {
