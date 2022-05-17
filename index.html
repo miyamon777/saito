@@ -9,24 +9,26 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div class="header">
-        <div class="header-left">
-            <p class="header-left-left">020-800-456-747</p>
+
+    <div class="nav">
+        <div class="nav-left">
+            <p class="nav-left-left">020-800-456-747</p>
             <p>Free shipping on orders over $300</p>
         </div>
-        <div class="header-right">
-            <div class="header-right-box">
-                <a class="arrow header-country-btn" href="#">English</a>
+        <div class="nav-right">
+            <div class="nav-right-box">
+                <a class="arrow nav-country-btn" href="#">English</a>
                 <div style="display:none;" class="click-menu click-menu-country">
                     <a class="click-country-menu-btn" href="#">German</a>
                     <a class="click-country-menu-btn" href="#">French</a>
                 </div>
             </div>
-            <p class="header-right-border"></p>
+            <p class="nav-right-border"></p>
             <p></p>
-            <div class="header-right-box">
-                <a class="arrow header-money-btn" href="#">USD</a>
+            <div class="nav-right-box">
+                <a class="arrow nav-money-btn" href="#">USD</a>
                 <div style="display:none;" class="click-menu click-menu-money">
                     <a class="click-money-menu-btn" href="#">EUR</a>
                     <a class="click-money-menu-btn" href="#">GBP</a>
@@ -35,39 +37,44 @@
         </div>
     </div>
 
-    <button id="scroll-to-top-btn">⬆︎</button>
-
-    <button class="select-btn">
-        <i class="fa-solid fa-gear"></i>
-    </button>
-    <div class="select-btn-content" style="display:none;">
-        <select name="" id="select">
-            <option value="0">select colour variant</option>
-            <option value="1">blue</option>
-            <option value="2">pink</option>
-            <option value="3">red</option>
-            <option value="4">green</option>
-        </select>
-    </div>
-
-    <div class="navigation">
+    <header>
         <div class="SELL">
             <p>S E L L <span>.</span></p>
         </div>
-        <div class="HOME">
-            <a class="arrow home-first" href="#">HOME</a>
-            <a class="arrow home" href="#">SHOP</a>
-            <a class="arrow home template-btn" href="#">TEMPLATE</a>
-            <a class="arrow home" href="#">DROPDOWN</a>
-            <a class="no-arrow" href="#">CONTACT</a>
-            <a class="arrow home home-last" href="#">DOCS</a>
+        <div class="header-center">
+            <div class="header-list">
+                <a class="arrow home home-btn" href="#">HOME</a>
+                <div class="home-content" style="display:none;"></div>
+            </div>
+            <div class="header-list">
+                <a class="arrow home shop-btn" href="#">SHOP</a>
+                <div class="shop-content" style="display:none;"></div>
+            </div>
+            <div class="header-list">
+                <a class="arrow home template-btn" href="#">TEMPLATE</a>
+            </div>
+            <div class="header-list">
+                <a class="arrow home dropdown-btn" href="#">DROPDOWN</a>
+                <div class="dropdown-content" style="display:none;"></div>
+            </div>
+            <div class="header-list">
+                <a class="no-arrow" href="#">CONTACT</a>
+            </div>
+            <div class="header-list">
+                <a class="arrow home docs-btn " href="#">DOCS</a>
+                <div class="docs-content" style="display:none;"></div>
+            </div>
         </div>
         <div class="logo">
             <p class="logo-padding">ロゴ</p>
             <p class="logo-padding">ロゴ</p>
             <p>ロゴ</p>
         </div>
-    </div>
+    </header>
+
+    <!-- 隠し要素templateボタン -->
+    <div class="template-content" style="display:none;"></div>
+    <!--  -->
     
     <div class="swiper mySwiper1">
         <div class="swiper-wrapper">
@@ -79,7 +86,7 @@
         <div class="swiper-button-prev"></div>
     </div>
 
-    <div class="topic">
+    <div class="top-choices">
         <div>
             <h5>TOP CHOICES</h5>
             <h2>Popular this week</h2>
@@ -87,7 +94,7 @@
         </div>
     </div>
 
-    <div class="sub-main">
+    <main>
         <div class="small-box">
             <a href="">
                 <img class="small" src="image4.png" alt="">
@@ -99,8 +106,8 @@
                     <h2>bag</h2>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$39.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$39.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
@@ -115,8 +122,8 @@
                     <h1>her</h1>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$39.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$39.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
@@ -130,8 +137,8 @@
                     <h1>Tees</h1>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$39.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$39.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
@@ -145,8 +152,8 @@
                     <h2>sunglasses</h2>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$39.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$39.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
@@ -161,8 +168,8 @@
                     <h2>Black</h2>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$149.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$149.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
@@ -177,14 +184,14 @@
                     <h1>everywhere</h1>
                 </a>
                 <a href="">
-                    <p class="sub-main-money">$39.90</p>
-                    <p class="sub-main-shop">SHOP NOW</p>
+                    <p class="main-money">$39.90</p>
+                    <p class="main-shop">SHOP NOW</p>
                 </a>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="service">
+    <section>
         <div>
             <h4>FINAL SALES</h4>
             <p>Up to</p>
@@ -192,10 +199,10 @@
             <p class="Free">☆Free shipping on orders over $70.</p>
             <a href="#">SHOP NOW</a>
         </div>
-    </div>
+    </section>
 
-    <div class="main-slide">
-        <h2 class="main-slide-title">LAST VIEWED PRODUCTS</h2>
+    <div class="slide-bottom">
+        <h2 class="slide-bottom-title">LAST VIEWED PRODUCTS</h2>
         <div class="swiper mySwiper2">
             <div class="swiper-wrapper wrapper">
                 <div class="swiper-slide slide">
@@ -297,39 +304,35 @@
             </div>
         </div>
         <div class="pagination">
-            <a class="pagination-btn pagination-btn1"></a>
+            <a class="pagination-btn pagination-btn1 pagination-btn-active"></a>
             <a class="pagination-btn pagination-btn2"></a>
         </div>
     </div>
 
-    <div class="footer">
-        <div class="footer-left">
+    <div class="nav-bottom">
+        <div class="nav-bottom-left">
             <h4>FREE SHIPPING & RETURN</h4>
             <p>Free Shipping over $300</p>
         </div>
-        <div class="solid">
-
-        </div>
-        <div class="footer-center">
+        <div class="solid"></div>
+        <div class="nav-bottom-center">
             <h4>MONEY BACK GUARANTEE</h4>
             <p>30 Days Money Back Guarantee</p>
         </div>
-        <div class="solid">
-
-        </div>
-        <div class="footer-right">
+        <div class="solid"></div>
+        <div class="nav-bottom-right">
             <h4>020-800-456-747</h4>
             <p>24/7 Available Support</p>
         </div>
     </div>
 
-    <div class="main-footer">
-        <div class="main-footer-box">
-            <div class="main-footer-container-left">
+    <footer>
+        <div class="footer-box">
+            <div class="footer-container-left">
                 <h3>SELL.</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
             </div>
-            <div class="main-footer-container-center">
+            <div class="footer-container-center">
                 <h4>SHOP</h4>
                 <div>
                     <a href="">For Women</a>
@@ -339,7 +342,7 @@
                     <a href="">Shop</a>
                 </div>
             </div>
-            <div class="main-footer-container-center">
+            <div class="footer-container-center">
                 <h4>COMPANY</h4>
                 <div>
                     <a href="">Login</a>
@@ -349,10 +352,10 @@
                     <a href="">Checkouts</a>
                 </div>
             </div>
-            <div class="main-footer-container-right">
+            <div class="footer-container-right">
                 <h4>DAILY OFFERS & DISCOUNTS</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
-                <form class="main-footer-form" action="">
+                <form class="footer-form" action="">
                     <input type="text" value="" placeholder="Your Email Address">
                     <button type="submit">
                         <i class="fa-solid fa-paper-plane fa-lg"></i>
@@ -360,20 +363,36 @@
                 </form>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <div class="sub-footer">
+    <aside>
         <p>© 2020 Your company. All rights reserved.</p>
         <div>
-            <img class="sub-footer-img-padding" src="image2.png" alt="">
-            <img class="sub-footer-img-padding" src="image2.png" alt="">
-            <img class="sub-footer-img-padding" src="image2.png" alt="">
+            <img src="image2.png" alt="">
+            <img src="image2.png" alt="">
+            <img src="image2.png" alt="">
             <img src="image2.png" alt="">
         </div>
-    </div>
-    <div class="template-content" style="display:none;">
+    </aside>
 
+    <!-- 右の設定ボタン -->
+    <button class="select-btn">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+    <div class="select-btn-content" style="display:none;">
+        <select name="" id="select">
+            <option value="0">select colour variant</option>
+            <option value="1">blue</option>
+            <option value="2">pink</option>
+            <option value="3">red</option>
+            <option value="4">green</option>
+        </select>
     </div>
+    <!-- 上に上がるボタン -->
+    <button id="scroll-to-top-btn">⬆︎</button>
+
+
+
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/d7ba12b96a.js" crossorigin="anonymous"></script>
 </body>

@@ -1,63 +1,123 @@
 'use strict'
-const swiper1 = new Swiper(".mySwiper1", {
-    slidesPerView: 1,
-    loop: true,
-    longSwipesRatio: 0,
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",    
-    },
-});
-//アローボタン
-const clickCountryMenu = document.getElementsByClassName('click-menu-country')[0];
-const clickMoneyMenu = document.getElementsByClassName('click-menu-money')[0];
-document.addEventListener('click', (e) => {
-    const clickCountryMenuStyle = clickCountryMenu.getAttribute("style");
-    const headerCountryBtn = document.querySelector('.header-country-btn');
 
-    if(clickCountryMenuStyle === 'display:none;') {
-        if(!e.target.closest('.header-country-btn')) {
+//Englishボタン--------------------------------------------------------
+const clickCountryMenu = document.getElementsByClassName('click-menu-country')[0];
+const navCountryBtn = document.getElementsByClassName('nav-country-btn')[0];
+//クリックイベント
+document.addEventListener('click', (e) => {
+    //要素が出ていない時の処理
+    if(clickCountryMenu.style.display === 'none') {
+        //指定場所以外をクリックした時の処理
+        if(!e.target.closest('.nav-country-btn')) {
+        //指定場所をクリックした時の処理
         } else {
             clickCountryMenu.setAttribute('style', '');
-            headerCountryBtn.classList.add('is-active');
+            navCountryBtn.classList.add('is-active');
+            setTimeout(function() {
+                clickCountryMenu.classList.add("template-content-click");
+            },0);
         }
+    //要素が出ている時の処理
     } else {
+        //指定場所以外をクリックした時の処理
         if(!e.target.closest('.click-country-menu-btn')) {
             clickCountryMenu.setAttribute('style', 'display:none;');
-            headerCountryBtn.classList.remove('is-active');
+            navCountryBtn.classList.remove('is-active');
+            clickCountryMenu.classList.remove("template-content-click");
+        //指定場所をクリックした時の処理
         } else {
+            clickCountryMenu.setAttribute('style', 'display:none;');
+            navCountryBtn.classList.remove('is-active');
+            clickCountryMenu.classList.remove("template-content-click");
         }
     }
 });
+//USDボタン------------------------------------------------------------
+const clickMoneyMenu = document.getElementsByClassName('click-menu-money')[0];
+const navMoneyBtn = document.getElementsByClassName('nav-money-btn')[0];
 
 document.addEventListener('click', (e) => {
-    const clickMoneyMenuStyle = clickMoneyMenu.getAttribute("style");
-    const headerMoneyBtn = document.querySelector('.header-money-btn');
-    if(clickMoneyMenuStyle === 'display:none;') {
-        if(!e.target.closest('.header-money-btn')) {
-            clickMoneyMenu.setAttribute('style', 'display:none;');
+    if(clickMoneyMenu.style.display === 'none') {
+        if(!e.target.closest('.nav-money-btn')) {
         } else {
             clickMoneyMenu.setAttribute('style', '');
-            headerMoneyBtn.classList.add('is-active');
+            navMoneyBtn.classList.add('is-active');
+            setTimeout(function() {
+                clickMoneyMenu.classList.add("template-content-click");
+            },0);
         }
     } else {
         if(!e.target.closest('.click-money-menu-btn')) {
             clickMoneyMenu.setAttribute('style', 'display:none;');
-            headerMoneyBtn.classList.remove('is-active');
+            navMoneyBtn.classList.remove('is-active');
+            clickMoneyMenu.classList.remove("template-content-click");
         } else {
+            clickMoneyMenu.setAttribute('style', 'display:none;');
+            navMoneyBtn.classList.remove('is-active');
+            clickMoneyMenu.classList.remove("template-content-click");
+        }
+    }
+});
+//HOMEボタン----------------------------------------------------------
+const homeContent = document.getElementsByClassName('home-content')[0];
+const homeBtn = document.getElementsByClassName('home-btn')[0];
+
+document.addEventListener('click', (e) => {
+    if(homeContent.style.display === 'none') {
+        if(!e.target.closest('.home-btn')) {
+        } else {
+            homeContent.setAttribute('style', '');
+            homeBtn.classList.add('is-active');
+            setTimeout(function() {
+                homeContent.classList.add("home-content-click");
+            },0);
+        }
+    } else {
+        if(!e.target.closest('.home-btn')) {
+            homeContent.setAttribute('style', 'display:none;');
+            homeBtn.classList.remove('is-active');
+            homeContent.classList.remove("home-content-click");
+        } else {
+            homeContent.setAttribute('style', 'display:none;');
+            homeBtn.classList.remove('is-active');
+            homeContent.classList.remove("home-content-click");
         }
     }
 });
 
-//クリックしたら下から上へスライド
+//SHOPボタン----------------------------------------------------------
+const shopContent = document.getElementsByClassName('shop-content')[0];
+const shopBtn = document.getElementsByClassName('shop-btn')[0];
+
+document.addEventListener('click', (e) => {
+    if(shopContent.style.display === 'none') {
+        if(!e.target.closest('.shop-btn')) {
+        } else {
+            shopContent.setAttribute('style', '');
+            shopBtn.classList.add('is-active');
+            setTimeout(function() {
+                shopContent.classList.add("shop-content-click");
+            },0);
+        }
+    } else {
+        if(!e.target.closest('.shop-btn')) {
+            shopContent.setAttribute('style', 'display:none;');
+            shopBtn.classList.remove('is-active');
+            shopContent.classList.remove("shop-content-click");
+        } else {
+            shopContent.setAttribute('style', 'display:none;');
+            shopBtn.classList.remove('is-active');
+            shopContent.classList.remove("shop-content-click");
+        }
+    }
+});
+
+//TEMPLATEボタン----------------------------------------------------------
 const templateContent = document.getElementsByClassName('template-content')[0];
 const templateBtn = document.getElementsByClassName('template-btn')[0];
 
-
-
 document.addEventListener('click', (e) => {
-    const templateContentStyle = templateContent.getAttribute("style");
-    if(templateContentStyle === 'display:none;') {
+    if(templateContent.style.display === 'none') {
         if(!e.target.closest('.template-btn')) {
         } else {
             templateContent.setAttribute('style', '');
@@ -79,58 +139,107 @@ document.addEventListener('click', (e) => {
     }
 });
 
+//DROPDOWNボタン----------------------------------------------------------
+const dropdownContent = document.getElementsByClassName('dropdown-content')[0];
+const dropdownBtn = document.getElementsByClassName('dropdown-btn')[0];
 
-//ボタン
+document.addEventListener('click', (e) => {
+    if(dropdownContent.style.display === 'none') {
+        if(!e.target.closest('.dropdown-btn')) {
+        } else {
+            dropdownContent.setAttribute('style', '');
+            dropdownBtn.classList.add('is-active');
+            setTimeout(function() {
+                dropdownContent.classList.add("dropdown-content-click");
+            },0);
+        }
+    } else {
+        if(!e.target.closest('.dropdown-btn')) {
+            dropdownContent.setAttribute('style', 'display:none;');
+            dropdownBtn.classList.remove('is-active');
+            dropdownContent.classList.remove("dropdown-content-click");
+        } else {
+            dropdownContent.setAttribute('style', 'display:none;');
+            dropdownBtn.classList.remove('is-active');
+            dropdownContent.classList.remove("dropdown-content-click");
+        }
+    }
+});
+
+//DOCSボタン----------------------------------------------------------
+const docsContent = document.getElementsByClassName('docs-content')[0];
+const docsBtn = document.getElementsByClassName('docs-btn')[0];
+
+document.addEventListener('click', (e) => {
+    if(docsContent.style.display === 'none') {
+        if(!e.target.closest('.docs-btn')) {
+        } else {
+            docsContent.setAttribute('style', '');
+            docsBtn.classList.add('is-active');
+            setTimeout(function() {
+                docsContent.classList.add("docs-content-click");
+            },0);
+        }
+    } else {
+        if(!e.target.closest('.docs-btn')) {
+            docsContent.setAttribute('style', 'display:none;');
+            docsBtn.classList.remove('is-active');
+            docsContent.classList.remove("docs-content-click");
+        } else {
+            docsContent.setAttribute('style', 'display:none;');
+            docsBtn.classList.remove('is-active');
+            docsContent.classList.remove("docs-content-click");
+        }
+    }
+});
+
+//押したら上に行くボタン⬆︎---------------------------------------------------
 const scroll_to_top_btn = document.querySelector('#scroll-to-top-btn');
-
-//クリックイベントを追加
+//クリックイベント
 scroll_to_top_btn.addEventListener( 'click' , scroll_to_top );
-
+//上に行く関数
 function scroll_to_top(){
 	window.scroll({top: 0, behavior: 'smooth'});
 }
 
-
-//スクロール時のイベントを追加
+//半分より下の方にいる時だけ表示させるようにする
 window.addEventListener( 'scroll' , scroll_event );
 
 function scroll_event(){
-	
 	if(window.pageYOffset > 400){
 		scroll_to_top_btn.style.opacity = '1';
 	}else	if(window.pageYOffset < 400){
 		scroll_to_top_btn.style.opacity = '0';
 	}
-	
 }
 
-//セレクトボタンイベント
+//右の設定マークボタン-------------------------------------------------------
 const selectBtnContent = document.getElementsByClassName('select-btn-content')[0];
 const selectBtn = document.getElementsByClassName('select-btn')[0];
-
-
+//クリックしたら要素が出てくるようにする
 selectBtn.addEventListener('click', function() {
-    //クリックによって値が変わるのでここに記載
     const selectBtnContentStyle = selectBtnContent.getAttribute("style");
-
     if(selectBtnContentStyle === 'display:none;') {
-        //setAttributeメソッド完了後にtoggle実行
+        //要素を表示する
         selectBtnContent.setAttribute('style','');
+        //setAttributeメソッド完了後にtoggle実行
+        //要素の高さを伸ばす
         setTimeout(function(){
             selectBtnContent.classList.toggle('select-btn-content-click');
         },0);
     } else {
+        //要素の高さを縮める
         selectBtnContent.classList.toggle('select-btn-content-click');
         //toggleメソッド完了後にsetAttribute実行
+        //要素を消す
         setTimeout(function(){
             selectBtnContent.setAttribute('style','display:none;');
         },400);
     }
 });
 
-//selectの内容によってボタンの色を変更
+//選択したらその色に変わるようにする
 const select = document.getElementById('select');
-//イベント
 select.addEventListener('change',selectColorChange);
 //カラーを変更する関数
 function selectColorChange() {
@@ -157,112 +266,53 @@ function selectColorChange() {
     }
 }
 
-//メインスライダー
+//上部スライダー--------------------------------------------------------------
+const swiper1 = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+    loop: true,
+    longSwipesRatio: 0,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",    
+    },
+});
+//下部スライダー--------------------------------------------------------------
 const swiper2 = new Swiper(".mySwiper2", {
     slidesPerView: 5,
-    spaceBetween: 25,
+    spaceBetween: 0,
     longSwipesRatio: 0,
 });
 //ページネーション
 const wrapper = document.querySelector('.wrapper');
-const paginationBtn = document.getElementsByClassName('pagination-btn')[0];
-paginationBtn.addEventListener('click',function() {
-    wrapper.style.transform  = "translateX(-100px)";
+const paginationBtn1 = document.getElementsByClassName('pagination-btn')[0];
+const paginationBtn2 = document.getElementsByClassName('pagination-btn')[1];
+
+//クリックイベント
+paginationBtn1.addEventListener('click',function() {
+    //左にスライド
+    wrapper.style.transform  = "translateX(0)";
+    wrapper.style.transition  = "all 1s";
+    //クラス追加、削除
+    paginationBtn1.classList.add('pagination-btn-active');
+    paginationBtn2.classList.remove('pagination-btn-active');
+})
+paginationBtn2.addEventListener('click',function() {
+    //右にスライド
+    wrapper.style.transform  = "translateX(-54vw)";
+    wrapper.style.transition  = "all 1s";
+    //クラス追加、削除
+    paginationBtn2.classList.add('pagination-btn-active');
+    paginationBtn1.classList.remove('pagination-btn-active');
 })
 
-//DOMツリー完成後関数実行
-window.addEventListener('DOMContentLoaded', function() {
-});
-
-//イベントを発生させる場所の定義
-const mainSlideBox = document.getElementsByClassName('main-slide-box')[0];
-//クリックした座標取得
-let setMx = 0;
-let diffMx = 0;
-let addMx = 0;
-
-const mainSlideList = document.getElementsByClassName('main-slide-list')[0];
-const width = mainSlideList.clientWidth;
-
-
-//クリックされた位置-現在値を計算する関数
-const difference = function(e) {
-    e.preventDefault();
-    //現在値を定義
-    let mX = e.pageX;
-    //１番左にある時
-    if((addMx) >= 0) {
-        if(diffMx >= 0) {
-            diffMx = (mX - setMx) / 6;
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        } else {
-            diffMx = (mX - setMx);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        }
-    //２番目にある時
-    } else if((addMx) >= -width) {
-        if(diffMx >= width) {
-            diffMx = (mX - setMx)-(((mX - setMx) - width) / 1.3);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        } else if(diffMx < width) {
-            diffMx = (mX - setMx);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        }
-    //３番目にある時
-    } else if((addMx) >= -width * 2) {
-        //左の領域を超えた時
-        if(diffMx >= width * 2) {
-            diffMx = (mX - setMx)-(((mX - setMx) - width * 2) / 1.5);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        //左の領域以外にいる時
-        } else if(diffMx < width * 2 && diffMx > -width) {
-            diffMx = (mX - setMx);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        //右の領域を超えた時
-        } else if(diffMx <= -width) {
-            diffMx = (mX - setMx)-(((mX - setMx) + width) / 1.3);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        }
-    //４番目にある時
-    } else if((addMx) >= -width * 3) {
-        if(diffMx >= width * 3) {
-            diffMx = (mX - setMx)-(((mX - setMx) - width * 3) / 1.7);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        } else if(diffMx < width * 3 && diffMx > 0) {
-            diffMx = (mX - setMx);
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        } else if(diffMx <= 0) {
-            diffMx = (mX - setMx) / 6;
-            mainSlideBox.style.transform = "translateX("+ (diffMx + addMx) + "px)";
-        }
-    }
-};
-
-//クリックすると関数を実行させる
-mainSlideBox.addEventListener('mousedown',function(e) {
-    e.preventDefault();
-    setMx = e.pageX;
-    //マウスを動かすと関数が実行される
-    mainSlideBox.addEventListener("mousemove", difference);
-    mainSlideBox.style.transition = "none";
-});
-
-//クリックを離したら関数を終了させる
-document.addEventListener('mouseup',function(e) {
-    e.preventDefault();
-    addMx += diffMx;
-    mainSlideBox.removeEventListener("mousemove", difference);
-    if (addMx > (-width / 2) ) {
-        addMx = 0;
-    } else if (addMx > ((-width / 2) + (-width)) && addMx <= (-width / 2)) {
-        addMx = -width;
-    } else if (addMx > ((-width / 2) + (-width * 2)) && addMx <= ((-width / 2)+ (-width))) {
-        addMx = -width * 2;
-    } else if (addMx > ((-width / 2) + (-width * 3)) && addMx <= ((-width / 2)+ (-width * 2))) {
-        addMx = -width * 3;
+//スライダーが一番右まで行ったらページネーションの色を変える
+const ariaLabel4 = document.querySelector('[aria-label="4 / 8"]');
+wrapper.addEventListener('mousemove',function() {
+    if(ariaLabel4.className === 'swiper-slide slide swiper-slide-active') {
+        paginationBtn2.classList.add('pagination-btn-active');
+        paginationBtn1.classList.remove('pagination-btn-active');
     } else {
-        addMx = -width * 3;
+        paginationBtn1.classList.add('pagination-btn-active');
+        paginationBtn2.classList.remove('pagination-btn-active');
     }
-    mainSlideBox.style.transform = "translateX("+ (addMx) + "px)";
-    mainSlideBox.style.transition = "all 0.3s";
 });

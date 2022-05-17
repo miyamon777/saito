@@ -10,6 +10,7 @@ body {
     color: #000000;
     text-decoration: none;
     vertical-align: middle;
+    cursor: pointer;
 }
 .arrow::after {
     position: absolute;
@@ -54,25 +55,25 @@ body {
     -webkit-transform: rotate(-135deg);
 }
 /* -------------------------------------------------- */
-.header {
+.nav {
     display: flex;
     justify-content: space-between;
     height: 50px;
     padding: 0 10px;
     background-color: rgb(250, 250, 250);
 }
-.header-right {
+.nav-right {
     display: flex;
     padding-right: 10px;
 }
-.header-left {
+.nav-left {
     display: flex;
 }
-.header-left p {
+.nav-left p {
     margin: auto;
     font-size: 12px;
 }
-.header a {
+.nav a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,17 +82,17 @@ body {
     font-size: 12px;
     text-decoration: none;
 }
-.header p {
+.nav p {
     padding: 0 10px;
     color: rgb(130, 130, 130);
 }
-.header-left-left {
+.nav-left-left {
     border-right: 1px solid rgb(220, 220, 220);
 }
-.header-right-border {
+.nav-right-border {
     border-right: 1px solid rgb(220, 220, 220);
 }
-.header-right-box {
+.nav-right-box {
     display: flex;
     position: relative;
 }
@@ -99,19 +100,17 @@ body {
     position: absolute;
     right: -20px;
     bottom: -80px;
-    z-index: 10;
-    width: 150px;
-    height: 80px;
 }
 .click-menu-money {
     position: absolute;
     right: -10px;
     bottom: -80px;
+}
+.click-menu {
     z-index: 10;
     width: 150px;
     height: 80px;
-}
-.click-menu {
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
             animation: UpAnime .5s forwards;
 
     -webkit-animation: UpAnime .5s forwards;
@@ -124,11 +123,11 @@ body {
     padding-left: 20px;
     background: white;
     color: rgb(97, 97, 97);
-    font-size: 13px;
+    font-size: 12px;
     text-decoration: none;
 }
 .click-menu a:hover {
-    background-color: azure;
+    background-color: rgb(250, 250, 250);
 }
 
 #scroll-to-top-btn {
@@ -209,20 +208,34 @@ body {
     font-size: 20px;
 }
 /* -------------------------------------------------- */
-.navigation {
+header {
     display: flex;
     justify-content: space-between;
     height: 50px;
     padding: 0 30px;
     background-color: rgb(250, 250, 250);
 }
-.navigation div {
+.SELL, .header-center, .logo {
     display: flex;
 }
-.navigation p, .navigation a {
+.header-center {
+    justify-content: space-between;
+}
+header p, header a {
     font-weight: bold;
 }
-
+.header-list {
+    position: relative;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.header-list a {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+.header-list a:hover {
+    color: black;
+}
 .SELL {
     font-size: 20px;
 }
@@ -232,31 +245,15 @@ body {
 .SELL span {
     color: aquamarine;
 }
-.HOME {
+.header-center {
+    width: 60vw;
     font-size: 12px;
-}
-.HOME a {
-    margin: auto;
-    margin-bottom: 5px;
-    color: rgb(100, 100, 100);
-    text-decoration: none;
-}
-.home-first {
-    padding-right: 1vw;
-    padding-left: 0;
 }
 .home {
     padding-right: 1vw;
-    padding-left: 5vw;
+    padding-left: 0;
 }
-.no-arrow {
-    padding-right: 0;
-    padding-left: 5vw;
-}
-.home-last {
-    padding-right: 1vw;
-    padding-left: 5vw;
-}
+
 .logo {
     font-size: 12px;
 }
@@ -273,13 +270,11 @@ body {
     height: 45vw;
 }
 .swiper:active {
+    cursor: -webkit-grab;
     cursor: grab;
 }
 .swiper-slide {
     /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display:         flex;
             justify-content: center;
             align-items: center;
@@ -299,7 +294,9 @@ body {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    -o-object-fit: cover;
+
+       object-fit: cover;
 }
 .swiper {
     margin-right: auto;
@@ -332,51 +329,51 @@ body {
     content: "";
 }
 /* -------------------------------------------------- */
-.topic {
+.top-choices {
     position: relative;
     width: 65vw;
     height: 300px;
 }
-.topic div {
+.top-choices div {
     position: absolute;
     top: 100px;
     left: 60px;
 }
-.topic h5 {
+.top-choices h5 {
     margin: 0;
     color: rgb(130, 130, 130);
 }
-.topic h2 {
+.top-choices h2 {
     margin: 0;
     padding: 5px 0;
 }
-.topic p {
+.top-choices p {
     margin: 0;
     color: rgb(200, 200, 200);
     font-size: 16px;;
 }
 /* -------------------------------------------------- */
-.sub-main {
+main {
     width: auto;
     height: auto;
 }
-.sub-main h1 {
+main h1 {
     margin: 0;
     color: crimson;
 }
-.sub-main h2 {
+main h2 {
     margin: 0;
     color: crimson;
 }
-.sub-main a {
+main a {
     text-decoration: none;
 }
-.sub-main-money {
+.main-money {
     margin-top: 5px;
     color: rgb(150, 150, 150);
     font-size: 12px;
 }
-.sub-main-shop {
+.main-shop {
     margin-top: 20px;
     color: rgb(150, 150, 150);
     font-size: 10px;
@@ -414,14 +411,14 @@ body {
     height: auto;
 }
 /* -------------------------------------------------- */
-.service {
+section {
     position: relative;
     clear: left;
     width: auto;
     height: 600px;
     background-color: crimson;
 }
-.service div {
+section div {
     position: absolute;
     top: 130px;
     left: 0;
@@ -429,23 +426,23 @@ body {
     color: white;
     text-align: center;
 }
-.service h4 {
+section h4 {
     margin: 0;
     font-weight: lighter;
     font-size: 45px;
 }
-.service p {
+section p {
     margin: 10px 0;
     font-size: 10px;
 }
 p.Free {
     margin-bottom: 50px;
 }
-.service h1 {
+section h1 {
     margin: 0;
     font-size: 70px;
 }
-.service a {
+section a {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -457,17 +454,18 @@ p.Free {
     text-decoration: none;
     text-align: center;
 }
-.service a:hover {
+section a:hover {
     background-color: white;
     color: black;
     transition: all .2s ;
 }
 /* -------------------------------------------------- */
-.main-slide {
+.slide-bottom {
+    position: relative;
     width: 100%;
     height: auto;
 }
-.main-slide-title {
+.slide-bottom-title {
     width: 100%;
     height: auto;
     margin: 0;
@@ -478,18 +476,16 @@ p.Free {
 .mySwiper2 {
     width: auto;
     height: auto;
-    margin: 0 5%;
-}
-.wrapper {
-    transition: all 0.3s;
+    margin: 0 5vw;
 }
 .slide {
     display: block;
-    text-align: left;
     background-color: white;
+    text-align: left;
 }
 .swiper-img {
     position: relative;
+    margin: 0 1vw;
     border-bottom: 2px solid rgb(120, 120, 120);
 }
 .mask1 {
@@ -532,8 +528,6 @@ p.Free {
     margin: 0;
     font-size: 12px;
 }
-.swiper-text:active {
-}
 .swiper-text p {
     color: rgb(150, 150, 150);
 }
@@ -548,9 +542,9 @@ p.Free {
     font-size: 12px;
 }
 .pagination {
-    text-align: center;
     padding-top: 50px;
     padding-bottom: 100px;
+    text-align: center;
 }
 .pagination-btn {
     display: inline-block;
@@ -561,8 +555,15 @@ p.Free {
     background: #cccccc;
     cursor: pointer;
 }
+.pagination-btn:hover {
+    background-color: black;
+    transition: all .3s;
+}
+.pagination-btn-active {
+    background-color: black;
+}
 /* -------------------------------------------------- */
-.footer {
+.nav-bottom {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -570,72 +571,72 @@ p.Free {
     background-color: rgb(250, 250, 250);
     font-size: 13px;
 }
-.footer div {
+.nav-bottom div {
     margin: auto 0;
 }
-.footer-left {
+.nav-bottom-left {
     padding-left: 60px;
 }
-.footer-right {
+.nav-bottom-right {
     padding-right: 60px;
 }
 .solid {
     height: 30px;
     border-right: 1px solid black;
 }
-.footer h4 {
+.nav-bottom h4 {
     margin: 0;
     padding-bottom: 10px;
     letter-spacing: 1px;
 }
-.footer p {
+.nav-bottom p {
     margin: 0;
     color: rgb(200, 200, 200);
     font-size: 11px;
 }
 /* -------------------------------------------------- */
-.main-footer {
+footer {
     height: 350px;
     background-color: rgb(220, 220, 220);
     font-size: 13px;
 }
-.main-footer-box {
+.footer-box {
     display: flex;
     justify-content: space-between;
     margin: auto 60px;
 }
-.main-footer-box h3, .main-footer-box h4 {
+.footer-box h3, .footer-box h4 {
     letter-spacing: 1px;
 }
-.main-footer-box p {
+.footer-box p {
     color: rgb(150, 150, 150);
 }
-.main-footer-container-left {
+.footer-container-left {
     width: 35%;
     margin: 80px 0;
 }
-.main-footer-container-center {
+.footer-container-center {
     width: 15%;
     margin: 70px 0;
 }
-.main-footer-box a {
+.footer-box a {
     display: block;
     color: rgb(150, 150, 150);
     text-decoration: none;
 }
-.main-footer-box a:hover {
+.footer-box a:hover {
             text-decoration-line: underline ;
 
     -webkit-text-decoration-line: underline ;
 }
-.main-footer-container-right {
+.footer-container-right {
     width: 35%;
     margin: 70px 0;
 }
-.main-footer-form {
+.footer-form {
     display: flex;
 }
-.main-footer-form input {
+.footer-form input {
     width: 100%;
     height: 40px;
     padding: 0;
@@ -647,25 +648,25 @@ p.Free {
     background-color: rgb(220, 220, 220);
     color: black;
 }
-.main-footer-form input::-webkit-input-placeholder {
+.footer-form input::-webkit-input-placeholder {
     color: rgb(150, 150, 150);
 }
-.main-footer-form input::-moz-placeholder {
+.footer-form input::-moz-placeholder {
     color: rgb(150, 150, 150);
 }
-.main-footer-form input:-ms-input-placeholder {
+.footer-form input:-ms-input-placeholder {
     color: rgb(150, 150, 150);
 }
-.main-footer-form input::-ms-input-placeholder {
+.footer-form input::-ms-input-placeholder {
     color: rgb(150, 150, 150);
 }
-.main-footer-form input::placeholder {
+.footer-form input::placeholder {
     color: rgb(150, 150, 150);
 }
-.main-footer-form input:focus {
+.footer-form input:focus {
     outline: none;
 }
-.main-footer-form button {
+.footer-form button {
     width: 50px;
     height: 40px;
     padding: 0;
@@ -676,45 +677,102 @@ p.Free {
     background-color: rgb(220, 220, 220);
     cursor: pointer;
 }
-.main-footer-form button:hover {
+.footer-form button:hover {
     background-color: rgb(100, 100, 100);
     transition: all .2s;
 }
 /* -------------------------------------------------- */
-.sub-footer {
+aside {
     display: flex;
     justify-content: space-between;
     height: 80px;
     background-color: rgb(60, 60, 60);
 }
-.sub-footer p {
+aside p {
     margin: auto auto auto 60px;
     color: rgb(220, 220, 220);
     font-size: 12px;
 }
-.sub-footer div {
+aside div {
     display: flex;
     height: auto;
     margin: auto 60px auto auto;
 }
-.sub-footer img {
+aside img {
     display: block;
     width: 40px;
     height: 20px;
 }
-.sub-footer-img-padding {
+aside img {
     padding-right: 5px;
 }
 /* -------------------------------------------------- */
+.home-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.home-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.shop-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.shop-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
 .template-content {
     position: absolute;
     top: 105px;
+    z-index: 10;
     width: 100vw;
     height: 85vh;
-    background-color: black;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
 }
 .template-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.dropdown-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
     z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.dropdown-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.docs-content {
+    position: absolute;
+    top: 30px;
+    right: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.docs-content-click {
     transform: translateY(-5px);
     transition: all .2s ease-out;
 }
