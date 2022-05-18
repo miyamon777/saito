@@ -215,6 +215,9 @@ header {
     padding: 0 30px;
     background-color: rgb(250, 250, 250);
 }
+.header-is-active {
+    background-color: white;
+}
 .SELL, .header-center, .logo {
     display: flex;
 }
@@ -227,7 +230,6 @@ header p, header a {
 .header-list {
     position: relative;
     margin: auto;
-    margin-bottom: 5px;
 }
 .header-list a {
     color: rgb(100, 100, 100);
@@ -240,7 +242,7 @@ header p, header a {
     font-size: 20px;
 }
 .SELL p {
-    margin-bottom: 0;
+    margin: auto;
 }
 .SELL span {
     color: aquamarine;
@@ -253,16 +255,83 @@ header p, header a {
     padding-right: 1vw;
     padding-left: 0;
 }
-
 .logo {
     font-size: 12px;
 }
 .logo p {
     margin: auto;
-    margin-bottom: 5px;
 }
 .logo-padding {
     padding-right: 15px;
+}
+.home-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.home-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.shop-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.shop-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.template-content {
+    position: absolute;
+    top: 105px;
+    z-index: 10;
+    width: 100vw;
+    height: 85vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.template-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.dropdown-content {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.dropdown-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
+}
+.docs-content {
+    position: absolute;
+    top: 30px;
+    right: -25px;
+    z-index: 10;
+    width: 20vw;
+    height: 20vh;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    background-color: white;
+}
+.docs-content-click {
+    transform: translateY(-5px);
+    transition: all .2s ease-out;
 }
 /* -------------------------------------------------- */
 .swiper {
@@ -271,11 +340,11 @@ header p, header a {
 }
 .swiper:active {
     cursor: -webkit-grab;
-    cursor: grab;
+    cursor:         grab;
 }
 .swiper-slide {
     /* Center slide text vertically */
-    display:         flex;
+    display: flex;
             justify-content: center;
             align-items: center;
     background: rgb(250, 250, 250);
@@ -295,7 +364,6 @@ header p, header a {
     height: 100%;
 
     -o-object-fit: cover;
-
        object-fit: cover;
 }
 .swiper {
@@ -707,72 +775,3 @@ aside img {
     padding-right: 5px;
 }
 /* -------------------------------------------------- */
-.home-content {
-    position: absolute;
-    top: 30px;
-    left: -25px;
-    z-index: 10;
-    width: 20vw;
-    height: 20vh;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-}
-.home-content-click {
-    transform: translateY(-5px);
-    transition: all .2s ease-out;
-}
-.shop-content {
-    position: absolute;
-    top: 30px;
-    left: -25px;
-    z-index: 10;
-    width: 20vw;
-    height: 20vh;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-}
-.shop-content-click {
-    transform: translateY(-5px);
-    transition: all .2s ease-out;
-}
-.template-content {
-    position: absolute;
-    top: 105px;
-    z-index: 10;
-    width: 100vw;
-    height: 85vh;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-}
-.template-content-click {
-    transform: translateY(-5px);
-    transition: all .2s ease-out;
-}
-.dropdown-content {
-    position: absolute;
-    top: 30px;
-    left: -25px;
-    z-index: 10;
-    width: 20vw;
-    height: 20vh;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-}
-.dropdown-content-click {
-    transform: translateY(-5px);
-    transition: all .2s ease-out;
-}
-.docs-content {
-    position: absolute;
-    top: 30px;
-    right: -25px;
-    z-index: 10;
-    width: 20vw;
-    height: 20vh;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-}
-.docs-content-click {
-    transform: translateY(-5px);
-    transition: all .2s ease-out;
-}

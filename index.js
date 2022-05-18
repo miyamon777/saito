@@ -59,28 +59,51 @@ document.addEventListener('click', (e) => {
     }
 });
 //HOMEボタン----------------------------------------------------------
+//全共通
+const header = document.getElementsByClassName('header')[0];
+
+
 const homeContent = document.getElementsByClassName('home-content')[0];
 const homeBtn = document.getElementsByClassName('home-btn')[0];
 
 document.addEventListener('click', (e) => {
+    //要素が表示されていない時
     if(homeContent.style.display === 'none') {
+        //ボタン以外がクリックされた時
         if(!e.target.closest('.home-btn')) {
+        //ボタンがクリックされた時
         } else {
+            //要素を表示
             homeContent.setAttribute('style', '');
+            //アロー反転
             homeBtn.classList.add('is-active');
+            //要素が出て後に下記実行させる
             setTimeout(function() {
+                //5px上にトランスフォームさせる
                 homeContent.classList.add("home-content-click");
+                //ヘッダーのバックグラウンドカラーを変える
+                header.classList.add("header-is-active");
             },0);
         }
+    //要素が表示されている時
     } else {
+        //ボタン以外がクリックされた時
         if(!e.target.closest('.home-btn')) {
+            //要素を非表示
             homeContent.setAttribute('style', 'display:none;');
+            //アロー反転
             homeBtn.classList.remove('is-active');
+            //クラス削除
             homeContent.classList.remove("home-content-click");
+            //ヘッダーのバックグラウンドカラーを戻す
+            header.classList.remove("header-is-active");
+        //ボタンがクリックされた時
         } else {
+            //ボタン以外がクリックされた時と同じ
             homeContent.setAttribute('style', 'display:none;');
             homeBtn.classList.remove('is-active');
             homeContent.classList.remove("home-content-click");
+            header.classList.remove("header-is-active");
         }
     }
 });
@@ -97,6 +120,7 @@ document.addEventListener('click', (e) => {
             shopBtn.classList.add('is-active');
             setTimeout(function() {
                 shopContent.classList.add("shop-content-click");
+                header.classList.add("header-is-active");
             },0);
         }
     } else {
@@ -104,10 +128,12 @@ document.addEventListener('click', (e) => {
             shopContent.setAttribute('style', 'display:none;');
             shopBtn.classList.remove('is-active');
             shopContent.classList.remove("shop-content-click");
+            header.classList.remove("header-is-active");
         } else {
             shopContent.setAttribute('style', 'display:none;');
             shopBtn.classList.remove('is-active');
             shopContent.classList.remove("shop-content-click");
+            header.classList.remove("header-is-active");
         }
     }
 });
@@ -124,6 +150,7 @@ document.addEventListener('click', (e) => {
             templateBtn.classList.add('is-active');
             setTimeout(function() {
                 templateContent.classList.add("template-content-click");
+                header.classList.add("header-is-active");
             },0);
         }
     } else {
@@ -131,10 +158,12 @@ document.addEventListener('click', (e) => {
             templateContent.setAttribute('style', 'display:none;');
             templateBtn.classList.remove('is-active');
             templateContent.classList.remove("template-content-click");
+            header.classList.remove("header-is-active");
         } else {
             templateContent.setAttribute('style', 'display:none;');
             templateBtn.classList.remove('is-active');
             templateContent.classList.remove("template-content-click");
+            header.classList.remove("header-is-active");
         }
     }
 });
@@ -151,6 +180,7 @@ document.addEventListener('click', (e) => {
             dropdownBtn.classList.add('is-active');
             setTimeout(function() {
                 dropdownContent.classList.add("dropdown-content-click");
+                header.classList.add("header-is-active");
             },0);
         }
     } else {
@@ -158,10 +188,12 @@ document.addEventListener('click', (e) => {
             dropdownContent.setAttribute('style', 'display:none;');
             dropdownBtn.classList.remove('is-active');
             dropdownContent.classList.remove("dropdown-content-click");
+            header.classList.remove("header-is-active");
         } else {
             dropdownContent.setAttribute('style', 'display:none;');
             dropdownBtn.classList.remove('is-active');
             dropdownContent.classList.remove("dropdown-content-click");
+            header.classList.remove("header-is-active");
         }
     }
 });
@@ -178,6 +210,7 @@ document.addEventListener('click', (e) => {
             docsBtn.classList.add('is-active');
             setTimeout(function() {
                 docsContent.classList.add("docs-content-click");
+                header.classList.add("header-is-active");
             },0);
         }
     } else {
@@ -185,10 +218,12 @@ document.addEventListener('click', (e) => {
             docsContent.setAttribute('style', 'display:none;');
             docsBtn.classList.remove('is-active');
             docsContent.classList.remove("docs-content-click");
+            header.classList.remove("header-is-active");
         } else {
             docsContent.setAttribute('style', 'display:none;');
             docsBtn.classList.remove('is-active');
             docsContent.classList.remove("docs-content-click");
+            header.classList.remove("header-is-active");
         }
     }
 });
